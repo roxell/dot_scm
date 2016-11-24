@@ -1,0 +1,8 @@
+*.[ao]
+*~
+*.tar.gz
+*.tgz
+*.swp
+
+# poky files...
+build*/*

@@ -1,0 +1,53 @@
+[diff]
+	tool = vimdiff
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[core]
+	excludesfile = ~/.gitignore
+	pager = less -FRSX
+	editor = vim
+	whitespace = trailing-space,space-before-tab,indent-with-non-tab,error-all
+[merge]
+	tool = vimdiff
+[alias]
+	lol = log --oneline --graph --date=short --pretty=format:'%C(yellow)%h%Creset :%C(magenta)%ad %Creset-%C(yellow)%d%Creset %s %C(bold green)<%an>%Creset' --abbrev-commit
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	dfs = diff --staged
+	lg = log -p
+	who = shortlog -s --
+	leader = shortlog -sn --
+	sub = submodule update --init
+	new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+	changes=diff --name-status -r
+	diffstat=diff --stat -r
+	llog = log --date=local
+	logr = log --cherry-pick --date=short --pretty=format:'%<(8,trunc)%C(yellow)%h %Creset- %C(blue)%ad %Creset- %Cgreen%<(20,trunc)%an%Creset: %s' --right-only
+	logl = log --cherry-pick --date=short --pretty=format:'%<(8,trunc)%C(yellow)%h %Creset- %C(blue)%ad %Creset- %Cgreen%<(20,trunc)%an%Creset: %s' --left-only
+	logo = log               --date=short --pretty=format:'%<(8,trunc)%C(yellow)%h %Creset- %C(green)%<(20,trunc)%an%Creset: %s'
+	logg = log --cherry-pick --date=short --pretty=format:'%Cred%m%Creset %<(8,trunc)%C(yellow)%h %Creset- %C(blue)%ad %Cgreen%<(20,trunc)%an%Creset: %s'
+	dft = difftool
+	am3 = am --3way
+	brh = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+[push]
+	default = current
+[diff "odf"]
+	textconv=odt2txt
+[include]
+	path = ~/.gitconfig.local
