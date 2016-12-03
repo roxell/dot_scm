@@ -2,7 +2,7 @@
 
 reporoot=$(readlink -f $(dirname $0))
 
-curl -sSOL https://raw.githubusercontent.com/roxell/local-inst-lib/master/install-lib
+[[ -f install-lib ]] || curl -sSOL https://raw.githubusercontent.com/roxell/local-inst-lib/master/install-lib
 source install-lib
 
 install_files=(
