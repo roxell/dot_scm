@@ -20,6 +20,7 @@
 	pager = less -FRSX
 	editor = vim
 	whitespace = trailing-space,space-before-tab,indent-with-non-tab,error-all
+	abbrev = 12
 [merge]
 	tool = vimdiff
 [alias]
@@ -45,6 +46,7 @@
 	dft = difftool
 	am3 = am --3way
 	brh = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	fixes = show --format='Fixes: %h (\"%s\")' -s
 [push]
 	default = current
 [diff "odf"]
