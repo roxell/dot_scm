@@ -1,0 +1,10 @@
+#!/bin/bash
+
+patch_url=${1}
+
+tmp_path=$(mktemp -d -t "kernel_lore-XXXXXXXXXX")
+cd ${tmp_path}
+b4 am ${patch_url}
+cd -
+git am3 ${tmp_path}/*.mbx
+rm -rf ${tmp_path}
