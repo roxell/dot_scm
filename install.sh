@@ -17,6 +17,7 @@ mkdir -p ${HOME}/bin
 python3 -m pip install --user b4
 
 create_symlink
+${reporoot}/tools.sh
 
 ###############################################################################
 # vim: set ts=4 sw=4 sts=4 et                                                 :
