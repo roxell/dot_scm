@@ -55,6 +55,8 @@
 	textconv=odt2txt
 [include]
 	path = ~/.gitconfig.local
+[url "ssh://git@gitlab.com/"]
+	insteadOf = https://gitlab.com/
 [rvw]
 	sandbox = bwrap
 	sandbox-ro = ~/local-etc/dot_ai/agents/AGENTS.md
