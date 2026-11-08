@@ -48,9 +48,16 @@
 	brh = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
 	fixes = show --format='Fixes: %h (\"%s\")' -s
 	g = grep --break --heading --line-number
+	rvw-simplify = !RVW_PROMPT_FILE=~/.config/rvw/simplify.txt git rvw prompt
 [push]
 	default = current
 [diff "odf"]
 	textconv=odt2txt
 [include]
 	path = ~/.gitconfig.local
+[rvw]
+	sandbox = bwrap
+	sandbox-ro = ~/local-etc/dot_ai/agents/AGENTS.md
+	sandbox-ro = /home/anders/local-etc/dot_ai/agents/skills/humanizer
+	sandbox-ro = /home/anders/local-etc/dot_ai/agents/rvw-plugin
+	check = /usr/bin/python3 -I /home/anders/local-etc/dot_ai/agents/skills/humanizer/scripts/check.py 2>&1 | grep -v '^0 error'
