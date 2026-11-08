@@ -6,3 +6,5 @@
 
 # poky files...
 build*/*
+
+**/.claude/settings.local.json
